@@ -1,0 +1,22 @@
+Table 2: Accuracy with gold doc + varying number of RANDOM docs (oracle setting)
+Position: Far [I,★,■,Q] / Mid [I,■,★,■,Q] / Near [I,■,★,Q]
+Baseline (0 random) all same: Gold-only [I,★,Q]
+Closed-book accuracy: Llama2=0.1123  MPT=0.1205  Phi-2=0.0488  Falcon=0.1083
+Key result: MPT Near improves from 0.2148 (0 random) to 0.2930 (4 random) = +0.0782 (+36%) — paper's "0.08 (+36%)" claim
+Key result: Llama2 Near improves from 0.5642 (0 random) to 0.5859 (14 random) = +0.0217 (+3.9%) — modest improvement
+
+#random,Far_Llama2,Far_MPT,Far_Phi2,Far_Falcon,Mid_Llama2,Mid_MPT,Mid_Phi2,Mid_Falcon,Near_Llama2,Near_MPT,Near_Phi2,Near_Falcon
+0,0.5642,0.2148,0.4438,0.4330,0.5642,0.2148,0.4438,0.4330,0.5642,0.2148,0.4438,0.4330
+1,0.4733,0.2447,0.4329,0.4035,no-mid,no-mid,no-mid,no-mid,0.4862,0.2125*,0.4587,0.4091
+2,0.3776,0.2639,0.4249,0.3805,0.3928,0.2584,0.4293,0.3612,0.5032,0.2660,0.4614,0.3912
+4,0.3109,0.2933,0.4091,0.3468,0.3998,0.2577,0.3985,0.3462,0.5221,0.2930,0.4311,0.3949
+6,0.3547,0.3036,0.4130,0.3250,0.4138,0.2265,0.3891,0.3196,0.5681*,0.2890,0.4388,0.3908
+8,0.3106,0.3039,0.3812,0.2543,0.3734,0.1566,0.3596,0.2767,0.5609*,0.2911,0.4258,0.3704
+10,0.3390,-,-,-,0.3675,-,-,-,0.5579*,-,-,-
+12,0.3736,-,-,-,0.3641,-,-,-,0.5836,-,-,-
+14,0.3527,-,-,-,0.3372,-,-,-,0.5859,-,-,-
+16,0.3401,-,-,-,0.3159,-,-,-,0.5722,-,-,-
+18,0.3466,-,-,-,0.2982,-,-,-,0.5588*,-,-,-
+
+* = NOT statistically significant change from gold-only baseline (Wilcoxon p<0.01)
+- = prompt exceeded model input limit (data truncation risk)
