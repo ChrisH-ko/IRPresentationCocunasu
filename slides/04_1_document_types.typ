@@ -30,7 +30,7 @@
           [*G*], [Gold document],
           [*R*], [Relevant documents],
           [*D*], [Distracting documents],
-          [*R*], [Random documents],
+          [*N*], [Noisy documents],
           [], [----------------------],
           [*Q*], [The query],
         )

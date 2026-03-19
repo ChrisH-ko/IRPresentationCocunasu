@@ -19,7 +19,7 @@
       - Place them *near the query* in the prompt
       - Fill the remaining context with *random documents*, far from the query
       #v(8pt)
-      Result: #prompt("I", "■ ■ ■", "▲/●", "Q")
+      Result: #prompt("I", "N", "G/R", "Q")
     ],
 
     // ── right ──
